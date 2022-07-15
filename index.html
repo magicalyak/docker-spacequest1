@@ -1,0 +1,31 @@
+<html>
+  <style type="text/css" media="screen">
+      canvas {
+          width: 800px; 
+          height: 600px;
+      }
+  </style>
+  <head>
+    <title>Space Quest 1</title>
+    <script src="js-dos.js"></script>
+  </head>
+  <body background="bg.jpg" text="white">
+    <canvas id="jsdos" width="800" height="600" ></canvas>
+    <script>
+      Dos(document.getElementById("jsdos"), {
+      }).ready((fs, main) => {
+        fs.extract("game.zip").then(() => {
+          main(["-c",  GAME_ARGS])
+        });
+      });
+    </script>
+    <br><br><br><br><br>
+    <center><form>
+      <input type="button" value="Go back!" onclick="history.back()">
+     </form></center>
+    <h3>Space Quest 1</h3>
+    <p>Space Quest 1: Roger Wilco in the Sarien Encounter is a remake of the original release of Space Quest: Chapter I - The Sarien Encounter. 
+      
+      The new version has enhanced graphics (256 color VGA) and soundblaster support. It uses the SCI game engine (point-and-click interface, icons along the top) rather than the AGI engine (mixed point-and-click with text parser). Some of the puzzles have been slightly changed to accommodate the new interface and it is also possible to skip the arcade part. There are a few additional scenes and more elaborate text descriptions, mostly enhancing the humorous effect. </p>    
+  </body>
+</html>
